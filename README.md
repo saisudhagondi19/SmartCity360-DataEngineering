@@ -7,7 +7,7 @@ Azure, Databricks, PySpark, Delta Lake and Power BI.
 
 ## 🗺️ Architecture Diagram
 
-![SmartCity360 Architecture](images/SmartCity360_Architecture.png)
+![images/SmartCity360_Architecture.drawio.png)
 
 ---
 
