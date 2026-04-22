@@ -1,0 +1,207 @@
+<mxGraphModel dx="1422" dy="762" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1200" math="0" shadow="1">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--                   TITLE                     -->
+    <!-- ═══════════════════════════════════════════ -->
+    <mxCell id="999" value="&lt;font style='font-size:24px; font-weight:bold;'&gt;SmartCity360 — Data Architecture&lt;/font&gt;&lt;br&gt;&lt;font style='font-size:13px; color:#6B7280;'&gt;Medallion Architecture  |  Azure + Databricks + PySpark + Power BI&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="150" y="10" width="1350" height="55" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--         LAYER 1 — SOURCES                   -->
+    <!-- ═══════════════════════════════════════════ -->
+    <mxCell id="bg1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;arcSize=3;" vertex="1" parent="1">
+      <mxGeometry x="155" y="75" width="1475" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="lbl1" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;DATA&lt;br&gt;SOURCES&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E3A8A;strokeColor=#3B82F6;fontColor=#FFFFFF;align=center;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="15" y="75" width="130" height="110" as="geometry"/>
+    </mxCell>
+    <!-- Source Boxes -->
+    <mxCell id="s1" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🌦 Weather API&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#BFDBFE;'&gt;Open-Meteo&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1D4ED8;strokeColor=#60A5FA;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="175" y="93" width="190" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="s2" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;💨 Air Quality API&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#A7F3D0;'&gt;AQI Real-time Data&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#065F46;strokeColor=#10B981;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="385" y="93" width="190" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🚌 Transport API&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#FED7AA;'&gt;Bus / Metro Data&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C2410C;strokeColor=#FB923C;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="595" y="93" width="190" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="s4" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🚦 Traffic Sensors&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#DDD6FE;'&gt;IoT Devices&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6D28D9;strokeColor=#A78BFA;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="805" y="93" width="190" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="s5" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🎪 City Events API&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#FBCFE8;'&gt;Events &amp; Alerts&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BE185D;strokeColor=#F472B6;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="1015" y="93" width="190" height="75" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--         LAYER 2 — INGESTION                 -->
+    <!-- ═══════════════════════════════════════════ -->
+    <mxCell id="bg2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#6EE7B7;arcSize=3;" vertex="1" parent="1">
+      <mxGeometry x="155" y="210" width="1475" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="lbl2" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;INGESTION&lt;br&gt;LAYER&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#065F46;strokeColor=#10B981;fontColor=#FFFFFF;align=center;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="15" y="210" width="130" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="i1" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;⚡ Azure Event Hubs&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#BFDBFE;'&gt;Real-time Streaming&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1D4ED8;strokeColor=#60A5FA;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="175" y="228" width="220" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="i2" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🔄 Azure Data Factory&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#BAE6FD;'&gt;Batch Ingestion Pipelines&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0284C7;strokeColor=#38BDF8;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="415" y="228" width="220" height="75" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--         LAYER 3 — BRONZE                    -->
+    <!-- ═══════════════════════════════════════════ -->
+    <mxCell id="bg3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#FCD34D;arcSize=3;" vertex="1" parent="1">
+      <mxGeometry x="155" y="345" width="1475" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="lbl3" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🥉 BRONZE&lt;br&gt;Raw Data&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#92400E;strokeColor=#F59E0B;fontColor=#FFFFFF;align=center;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="15" y="345" width="130" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="b1" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🗄 ADLS Gen2&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#FDE68A;'&gt;Azure Data Lake Storage&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B45309;strokeColor=#F59E0B;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="175" y="363" width="220" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="b2" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🔺 Delta Lake (Bronze)&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#FED7AA;'&gt;Raw Tables — No Changes&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C2410C;strokeColor=#FB923C;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="415" y="363" width="220" height="75" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--         LAYER 4 — PROCESSING                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <mxCell id="bg4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#C4B5FD;arcSize=3;" vertex="1" parent="1">
+      <mxGeometry x="155" y="480" width="1475" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="lbl4" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;PROCESSING&lt;br&gt;ENGINE&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C1D95;strokeColor=#A78BFA;fontColor=#FFFFFF;align=center;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="15" y="480" width="130" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="p1" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🧱 Databricks&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#FCA5A5;'&gt;Spark Cluster Platform&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#991B1B;strokeColor=#FF6B52;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="175" y="498" width="220" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="p2" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;⚙ PySpark&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#DDD6FE;'&gt;Data Transformation Jobs&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5B21B6;strokeColor=#A78BFA;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="415" y="498" width="220" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="p3" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;📊 MLflow&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#BFDBFE;'&gt;ML Experiment Tracking&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E40AF;strokeColor=#60A5FA;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="655" y="498" width="220" height="75" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--         LAYER 5 — SILVER                    -->
+    <!-- ═══════════════════════════════════════════ -->
+    <mxCell id="bg5" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3F4F6;strokeColor=#D1D5DB;arcSize=3;" vertex="1" parent="1">
+      <mxGeometry x="155" y="615" width="1475" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="lbl5" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🥈 SILVER&lt;br&gt;Clean Data&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#374151;strokeColor=#9CA3AF;fontColor=#FFFFFF;align=center;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="15" y="615" width="130" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="sv1" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🔺 Delta Lake (Silver)&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#D1D5DB;'&gt;Cleaned + Validated Data&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#374151;strokeColor=#9CA3AF;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="175" y="633" width="220" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="sv2" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;✅ Data Quality Checks&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#E5E7EB;'&gt;Null / Type Validation&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4B5563;strokeColor=#9CA3AF;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="415" y="633" width="220" height="75" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--         LAYER 6 — GOLD                      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <mxCell id="bg6" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#FCD34D;arcSize=3;" vertex="1" parent="1">
+      <mxGeometry x="155" y="750" width="1475" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="lbl6" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🥇 GOLD&lt;br&gt;Analytics Ready&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B45309;strokeColor=#FDE68A;fontColor=#FFFFFF;align=center;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="15" y="750" width="130" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="g1" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🔵 Synapse Analytics&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#99F6E4;'&gt;Serverless SQL Queries&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F766E;strokeColor=#2DD4BF;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="175" y="768" width="220" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="g2" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🟢 SQL Views&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#A7F3D0;'&gt;Aggregated KPI Tables&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#047857;strokeColor=#34D399;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="415" y="768" width="220" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="g3" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🔺 Delta Lake (Gold)&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#FDE68A;'&gt;Business Metrics Store&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B45309;strokeColor=#FDE68A;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="655" y="768" width="220" height="75" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--         LAYER 7 — CONSUMPTION               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <mxCell id="bg7" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;arcSize=3;" vertex="1" parent="1">
+      <mxGeometry x="155" y="885" width="1475" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="lbl7" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;CONSUMPTION&lt;br&gt;LAYER&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E40AF;strokeColor=#BFDBFE;fontColor=#FFFFFF;align=center;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="15" y="885" width="130" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="c1" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;📊 Power BI&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#BFDBFE;'&gt;Dashboards &amp; Reports&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E40AF;strokeColor=#93C5FD;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="175" y="903" width="220" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="c2" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🔔 Azure Monitor&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#BAE6FD;'&gt;Alerts, Logs &amp; Metrics&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0284C7;strokeColor=#38BDF8;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="415" y="903" width="220" height="75" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--         LAYER 8 — ORCHESTRATION             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <mxCell id="bg8" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE7F3;strokeColor=#F9A8D4;arcSize=3;" vertex="1" parent="1">
+      <mxGeometry x="155" y="1020" width="1475" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="lbl8" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;ORCHESTRATION&lt;br&gt;&amp; CI/CD&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9D174D;strokeColor=#F472B6;fontColor=#FFFFFF;align=center;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="15" y="1020" width="130" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="o1" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🔄 ADF Pipelines&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color:#FBCFE8;'&gt;Workflow Automation&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9D174D;strokeColor=#F472B6;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="175" y="1038" width="220" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="o2" value="&lt;b&gt;&lt;font style='font-size:13px;'&gt;🐙 GitHub Actions&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px; color=#D1D5DB;'&gt;CI/CD Pipeline&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1F2937;strokeColor=#6B7280;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="415" y="1038" width="220" height="75" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--               FLOW ARROWS                   -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <!-- Sources → Ingestion -->
+    <mxCell id="a1" value="&lt;b&gt;streams data&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#3B82F6;strokeWidth=2;fontColor=#1D4ED8;fontSize=11;fontStyle=1;" edge="1" source="s1" target="i1" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="a2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#3B82F6;strokeWidth=2;" edge="1" source="s2" target="i1" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="a3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#3B82F6;strokeWidth=2;" edge="1" source="s3" target="i1" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="a4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#3B82F6;strokeWidth=2;" edge="1" source="s4" target="i1" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="a5" value="&lt;b&gt;batch pull&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#0284C7;strokeWidth=2;fontColor=#0284C7;fontSize=11;fontStyle=1;" edge="1" source="s5" target="i2" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Ingestion → Bronze -->
+    <mxCell id="a6" value="&lt;b&gt;stores raw files&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#F59E0B;strokeWidth=2;fontColor=#B45309;fontSize=11;fontStyle=1;" edge="1" source="i1" target="b1" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="a7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#F59E0B;strokeWidth=2;" edge="1" source="i2" target="b2" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Bronze → Processing -->
+    <mxCell id="a8" value="&lt;b&gt;reads raw data&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#A78BFA;strokeWidth=2;fontColor=#5B21B6;fontSize=11;fontStyle=1;" edge="1" source="b2" target="p1" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Processing → Silver -->
+    <mxCell id="a9" value="&lt;b&gt;writes clean data&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#9CA3AF;strokeWidth=2;fontColor=#374151;fontSize=11;fontStyle=1;" edge="1" source="p1" target="sv1" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Silver → Gold -->
+    <mxCell id="a10" value="&lt;b&gt;aggregates KPIs&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#F59E0B;strokeWidth=2;fontColor=#B45309;fontSize=11;fontStyle=1;" edge="1" source="sv1" target="g1" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Gold → Consumption -->
+    <mxCell id="a11" value="&lt;b&gt;serves to dashboards&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#3B82F6;strokeWidth=2;fontColor=#1E40AF;fontSize=11;fontStyle=1;" edge="1" source="g1" target="c1" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>
